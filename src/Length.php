@@ -10,7 +10,7 @@ use Invoke\Validator;
 /**
  * String length validator.
  */
-#[Attribute]
+#[Attribute(Attribute::TARGET_PARAMETER | Attribute::TARGET_PROPERTY)]
 class Length implements Validator
 {
     public ?int $min;

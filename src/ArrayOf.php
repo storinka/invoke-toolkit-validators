@@ -19,7 +19,7 @@ use Invoke\Validator;
  *
  * Can be used as type to validate nested arrays.
  */
-#[Attribute]
+#[Attribute(Attribute::TARGET_PARAMETER | Attribute::TARGET_PROPERTY)]
 class ArrayOf extends ArrayType implements Validator, Type, HasDynamicName, HasUsedTypes
 {
     public Type $itemPipe;
