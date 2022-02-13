@@ -1,0 +1,23 @@
+{
+    "name": "storinka/invoke-toolkit-validators",
+    "description": "Invoke Toolkit validators collection",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Davyd Kohut",
+            "email": "davyd.kohut@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.1",
+        "storinka/invoke": "^v2",
+        "ext-mbstring": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Invoke\\Toolkit\\Validators\\": "src"
+        }
+    }
+}
