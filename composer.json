@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^8.1",
-        "storinka/invoke": "^v2",
+        "storinka/invoke": "^2.0",
         "ext-mbstring": "*"
     },
     "autoload": {
