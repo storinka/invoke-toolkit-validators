@@ -4,9 +4,10 @@ namespace Invoke\Toolkit\Validators;
 
 use Attribute;
 use Invoke\Exceptions\InvalidTypeException;
-use Invoke\Exceptions\ValidationFailedException;
 use Invoke\Piping;
 use Invoke\Stop;
+use Invoke\Support\HasDynamicTypeName;
+use Invoke\Support\HasUsedTypes;
 use Invoke\Type;
 use Invoke\Types\ArrayType;
 use Invoke\Utils\Utils;
@@ -18,7 +19,7 @@ use Invoke\Validator;
  * Can be used as type to validate nested arrays.
  */
 #[Attribute(Attribute::TARGET_PARAMETER | Attribute::TARGET_PROPERTY)]
-class ArrayOf extends ArrayType implements Validator, Type, HasDynamicName, HasUsedTypes
+class ArrayOf extends ArrayType implements Validator, Type, HasDynamicTypeName, HasUsedTypes
 {
     public Type $itemPipe;
 
@@ -40,7 +41,7 @@ class ArrayOf extends ArrayType implements Validator, Type, HasDynamicName, HasU
         foreach ($value as $index => $item) {
             try {
                 $value[$index] = Piping::run($this->itemPipe, $item);
-            } catch (InvalidTypeException|ValidationFailedException) {
+            } catch (InvalidTypeException) {
                 // ignore
             }
         }
@@ -53,7 +54,7 @@ class ArrayOf extends ArrayType implements Validator, Type, HasDynamicName, HasU
         return [$this->itemPipe];
     }
 
-    public function invoke_getDynamicName(): string
+    public function invoke_getDynamicTypeName(): string
     {
         $arrayTypeName = static::invoke_getTypeName();
         $itemPipeName = Utils::getPipeTypeName($this->itemPipe);
