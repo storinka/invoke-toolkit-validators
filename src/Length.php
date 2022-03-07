@@ -3,7 +3,6 @@
 namespace Invoke\Toolkit\Validators;
 
 use Attribute;
-use Invoke\Exceptions\ValidationFailedException;
 use Invoke\Stop;
 use Invoke\Validator;
 
@@ -32,16 +31,16 @@ class Length implements Validator
 
         if (!is_null($this->min)) {
             if ($length < $this->min) {
-                throw new ValidationFailedException(
-                    "min length {$this->min}, got {$length}"
+                throw new ValidationException(
+                    "Min length {$this->min}, got {$length}."
                 );
             }
         }
 
         if (!is_null($this->max)) {
             if ($length > $this->max) {
-                throw new ValidationFailedException(
-                    "max length {$this->max}, got {$length}"
+                throw new ValidationException(
+                    "Max length {$this->max}, got {$length}."
                 );
             }
         }

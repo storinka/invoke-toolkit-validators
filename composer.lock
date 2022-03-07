@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6ac32a0a3b293e3952eca0b874c0c7e3",
+    "content-hash": "7608da8eb33c62e50826ad363d907313",
     "packages": [
         {
             "name": "php-ds/php-ds",
@@ -63,7 +63,7 @@
         },
         {
             "name": "psr/container",
-            "version": "dev-master",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
@@ -78,7 +78,6 @@
             "require": {
                 "php": ">=7.4.0"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -117,16 +116,16 @@
         },
         {
             "name": "storinka/invoke",
-            "version": "v2.x-dev",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/storinka/invoke.git",
-                "reference": "ae2dae3cda9088785d45f306f47463d80a8841da"
+                "reference": "c311bccabba7a4fc37a1d56ae5c93012aa8f6398"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/storinka/invoke/zipball/ae2dae3cda9088785d45f306f47463d80a8841da",
-                "reference": "ae2dae3cda9088785d45f306f47463d80a8841da",
+                "url": "https://api.github.com/repos/storinka/invoke/zipball/c311bccabba7a4fc37a1d56ae5c93012aa8f6398",
+                "reference": "c311bccabba7a4fc37a1d56ae5c93012aa8f6398",
                 "shasum": ""
             },
             "require": {
@@ -137,9 +136,9 @@
                 "psr/container": "^2.0 | ^1.0"
             },
             "require-dev": {
+                "mockery/mockery": "dev-master",
                 "phpunit/phpunit": "^9"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "files": [
@@ -162,14 +161,14 @@
             "description": "Invoke Core library",
             "support": {
                 "issues": "https://github.com/storinka/invoke/issues",
-                "source": "https://github.com/storinka/invoke/tree/v2"
+                "source": "https://github.com/storinka/invoke/tree/2.0.0"
             },
-            "time": "2022-03-06T01:21:33+00:00"
+            "time": "2022-03-07T19:53:54+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
