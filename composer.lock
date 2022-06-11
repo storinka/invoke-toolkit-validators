@@ -116,16 +116,16 @@
         },
         {
             "name": "storinka/invoke",
-            "version": "v2.0.4",
+            "version": "v2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/storinka/invoke.git",
-                "reference": "e14940e451791d01919e40706ac2599c82942c21"
+                "reference": "937660811b046f66c6ee4fe159971b1fd365586d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/storinka/invoke/zipball/e14940e451791d01919e40706ac2599c82942c21",
-                "reference": "e14940e451791d01919e40706ac2599c82942c21",
+                "url": "https://api.github.com/repos/storinka/invoke/zipball/937660811b046f66c6ee4fe159971b1fd365586d",
+                "reference": "937660811b046f66c6ee4fe159971b1fd365586d",
                 "shasum": ""
             },
             "require": {
@@ -161,9 +161,9 @@
             "description": "Invoke Core library",
             "support": {
                 "issues": "https://github.com/storinka/invoke/issues",
-                "source": "https://github.com/storinka/invoke/tree/v2.0.4"
+                "source": "https://github.com/storinka/invoke/tree/v2.0.5"
             },
-            "time": "2022-05-04T18:17:27+00:00"
+            "time": "2022-06-11T08:55:34+00:00"
         }
     ],
     "packages-dev": [],
