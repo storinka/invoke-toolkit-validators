@@ -3,6 +3,7 @@
 namespace Invoke\Toolkit\Validators;
 
 use Attribute;
+use Invoke\Exceptions\InvalidParameterTypeException;
 use Invoke\Exceptions\InvalidTypeException;
 use Invoke\Piping;
 use Invoke\Stop;
@@ -36,17 +37,19 @@ class ArrayOf extends ArrayType implements Validator, Type, HasDynamicTypeName, 
             return $value;
         }
 
-        // todo: this is broken, fix it
+        $newValue = [];
 
         foreach ($value as $index => $item) {
             try {
-                $value[$index] = Piping::run($this->itemPipe, $item);
-            } catch (InvalidTypeException) {
-                // ignore
+                $newValue[$index] = Piping::run($this->itemPipe, $item);
+            } catch (InvalidParameterTypeException $exception) {
+                throw new InvalidParameterTypeException("{$index}->{$exception->path}", $exception->expectedType, $exception->valueTypeName);
+            } catch (InvalidTypeException $exception) {
+                throw new InvalidParameterTypeException($index, $exception->expectedType, $exception->valueTypeName);
             }
         }
 
-        return $value;
+        return $newValue;
     }
 
     public function invoke_getUsedTypes(): array
